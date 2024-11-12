@@ -1,0 +1,150 @@
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+header{
+    background-color: rgb(35, 35, 35);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+a{
+    color: white;
+    padding: 20px;
+} 
+
+img{
+    display: block;
+    width: 100%;
+}
+
+ul{
+    display: flex;
+    gap: 20px;
+}
+
+h2{
+    font-size: 2rem;
+    text-align: center;
+    margin: 40px 0;
+}
+
+/* Flex content 1 */
+
+.flex{
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+.flex > div{
+    flex: 1 1 200px;
+    margin: 10px;
+}
+
+/* Grid layout 1 */
+
+.grid-1{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin: 0 auto;
+    max-width: 1200px;
+    padding: 30px;
+    grid-gap: 20px;
+}
+.grid-1 > div:nth-child(n+4){
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    grid-gap: 10px;
+
+}
+.grid-1 > div.Anuncio{
+    display: block;
+    grid-column: 1;
+    grid-row: 2 / 5;
+}
+
+@media (max-width: 780px){
+    .grid-1{
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .grid-1 > div.Anuncio{
+        grid-row: 2 / 3;
+    }
+    .grid-1 > div:nth-child(n+4){
+        display: block;
+    }
+}
+
+
+/* Grid layout 2*/
+
+.Grid-2{
+    max-width: 1200px;
+    display: grid;
+    margin: 0 auto;
+    grid-template-columns: 1fr 20vw;
+    padding: 10px;
+    grid-gap: 20px;
+
+}
+.sidebar > div{
+    margin-bottom: 20px;
+}
+h3{
+    padding-top: 20px;
+    font-weight: bolder;
+}
+
+@media (max-width: 780px){
+    .Grid-2{
+        grid-template-columns: 1fr;
+    }
+    .sidebar{
+        display: flex;
+        overflow: scroll;
+    }
+    .sidebar > div{
+        flex: 1 0 200px;
+        margin: 0 10px;
+    }
+}
+
+/* Grid Layout 3*/
+
+.Grid-3{
+    display: grid;
+    grid-template-columns: repeat(	2, 1fr);
+    margin: 0 auto;
+    grid-gap: 20px;
+    padding: 10px;
+    max-width: 1200px;
+}
+.Grid-item3:nth-child(1){
+    grid-row: 1/3;
+}
+
+.Grid-item3{
+    display: grid;
+}
+.Grid-item3 > img{
+    grid-column: 1;
+    grid-row: 1 / 3;
+    align-self: end;
+}
+.Grid-item3 > p{
+    background-color: rgba(0, 0, 0, 0.62);
+    padding: 10px;
+    color: white;
+    grid-column: 1;
+    grid-row: 2;
+    align-self: end;
+}
